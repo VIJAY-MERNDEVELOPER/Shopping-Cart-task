@@ -3,16 +3,23 @@ import React from "react";
 function Products(props) {
   return (
     <div
-      class="card "
+      className="card col-lg-4"
       style={{ width: "18rem", backgroundColor: "rgb(183,183,183)" }}
     >
-      <div className="row justify-content-end mx-1 mt-1">
-        <span class="badge text-bg-info col-2 ">New</span>
-      </div>
-      <div className="card-body">
-        <img src={props.image} class="card-img-top" alt="..." />
+      {props.new ? (
+        <div className="row justify-content-end mx-1 mt-1">
+          <span className="badge text-bg-info col-2 ">New</span>
+        </div>
+      ) : (
+        <div className="row justify-content-end mx-1 mt-4"></div>
+      )}
 
-        <h5 class="card-title text-center my-3 mt-4">{props.description}</h5>
+      <div className="card-body">
+        <img src={props.image} className="card-img-top" alt="..." />
+
+        <h5 className="card-title text-center my-3 mt-4">
+          {props.description}
+        </h5>
 
         <h6 className="text-center text-black my-3 mt-4">Rs.{props.price}</h6>
 
@@ -20,7 +27,7 @@ function Products(props) {
           {props.buttonState ? (
             <button
               href="/"
-              class="btn btn-primary text-center"
+              className="btn btn-primary text-center"
               onClick={props.addCart}
             >
               Add To Cart
@@ -28,7 +35,7 @@ function Products(props) {
           ) : (
             <button
               href="/"
-              class="btn btn-danger text-center"
+              className="btn btn-danger text-center"
               onClick={props.addCart}
             >
               Remove From Cart

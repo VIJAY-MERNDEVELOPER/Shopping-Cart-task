@@ -5,12 +5,12 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 function Navbar(props) {
   return (
     <nav
-      class="navbar navbar-expand-lg bg-dark border-bottom border-body"
+      className="navbar navbar-expand-lg bg-dark border-bottom border-body"
       data-bs-theme="dark"
     >
-      <div class="container-fluid ">
+      <div className="container-fluid ">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -18,17 +18,17 @@ function Navbar(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="/">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
                 About
               </a>
             </li>
@@ -54,7 +54,7 @@ function Navbar(props) {
                   </a>
                 </li>
                 <li>
-                  <hr class="dropdown-divider" />
+                  <hr className="dropdown-divider" />
                 </li>
                 <li>
                   <a className="dropdown-item" href="/">
@@ -65,7 +65,7 @@ function Navbar(props) {
             </li>
           </ul>
           <div className="nav justify-content-center">
-            <span class="navbar-brand text-center" href="/">
+            <span className="navbar-brand text-center" href="/">
               Extremes
             </span>
           </div>
@@ -78,7 +78,7 @@ function Navbar(props) {
                 color="white"
               ></FontAwesomeIcon>{" "}
               Cart
-              <span class="badge bg-dark text-white ms-2 rounded-pill">
+              <span className="badge bg-dark text-white ms-2 rounded-pill">
                 {" "}
                 {props.cartValue}
               </span>
