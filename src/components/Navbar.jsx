@@ -64,8 +64,8 @@ function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <div className="nav justify-content-center">
-            <span className="navbar-brand text-center" href="/">
+          <div className="container text-center">
+            <span className="navbar-brand" href="/">
               Extremes
             </span>
           </div>
