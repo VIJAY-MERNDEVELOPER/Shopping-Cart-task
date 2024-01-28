@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
+  // Cart product data
   let productDetails = [
     {
       id: 1,
@@ -92,7 +93,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   return (
-    <div>
+    <div className="container-fixed">
       <Navbar cartValue={cart.length}></Navbar>
       <Header></Header>
       <div className="container my-3  ">
