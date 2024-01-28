@@ -5,12 +5,17 @@ import React from "react";
 import { useState } from "react";
 
 function Products({ product, cart, setCart }) {
+  // initializing total number of stars to view in review
   const totalStars = 5;
+  // to change the state of button
   const [buttonState, setButtonState] = useState(true);
+
+  // Function for clicking Add To Cart Button
   let addToCart = () => {
     setButtonState(false);
     setCart([...cart, product]);
   };
+  // Function for Remove from Cart Button
   let removeFromCart = () => {
     setButtonState(true);
     setCart(
@@ -21,10 +26,12 @@ function Products({ product, cart, setCart }) {
   };
 
   return (
+    // Creating a product Card
     <div
       className="card col-lg-4"
       style={{ width: "18rem", backgroundColor: "rgb(183,183,183)" }}
     >
+      {/* conditional rendering for giving new batch to new items */}
       {product.new ? (
         <div className="row justify-content-end mx-1 mt-1">
           <span className="badge text-bg-info col-2 ">New</span>
@@ -39,6 +46,7 @@ function Products({ product, cart, setCart }) {
         <h5 className="card-title text-center my-3 mt-4">
           {product.description}
         </h5>
+        {/* creating star review */}
         <div className="container text-center">
           {product.starReview ? (
             <span>
@@ -57,6 +65,7 @@ function Products({ product, cart, setCart }) {
             </div>
           )}
         </div>
+        {/* creating offer price and original price */}
         {product.offerPrice ? (
           <h6 className="text-center text-black my-3 mt-2">
             <span className="strike"> Rs.{product.price}</span> Rs.
@@ -67,7 +76,7 @@ function Products({ product, cart, setCart }) {
             Rs.{product.price}
           </h6>
         )}
-
+        {/* creating buttons for add and remove from cart */}
         <div className=" text-center mt-4 my-3">
           {buttonState ? (
             <button
