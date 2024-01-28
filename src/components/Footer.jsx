@@ -6,7 +6,7 @@ function Footer() {
       <div className="row justify-content-start mb-5">
         <h4 className="text-center">EXTREMES</h4>
       </div>
-      <h6 className="text-start ">© EXTREMES</h6>
+      <h6 className="text-start ">© EXTREMES 2024</h6>
     </div>
   );
 }

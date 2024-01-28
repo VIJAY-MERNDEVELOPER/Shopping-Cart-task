@@ -1,6 +1,21 @@
 import React from "react";
+import { useState } from "react";
 
-function Products({ product, addToCart, buttonState, removeFromCart, cart }) {
+function Products({ product, cart, setCart }) {
+  const [buttonState, setButtonState] = useState(true);
+  let addToCart = () => {
+    setButtonState(false);
+    setCart([...cart, product]);
+  };
+  let removeFromCart = () => {
+    setButtonState(true);
+    setCart(
+      cart.filter((cartProduct) => {
+        return cartProduct.id !== product.id;
+      })
+    );
+  };
+
   return (
     <div
       className="card col-lg-4"
@@ -26,19 +41,17 @@ function Products({ product, addToCart, buttonState, removeFromCart, cart }) {
         <div className=" text-center mt-4 my-3">
           {buttonState ? (
             <button
-              href="/"
               className="btn btn-primary text-center"
-              value={product.id}
-              onClick={() => addToCart(product, buttonState, cart)}
+              onClick={addToCart}
+              value={buttonState}
             >
               Add To Cart
             </button>
           ) : (
             <button
-              href="/"
               className="btn btn-danger text-center"
-              value={product.id}
-              onClick={() => removeFromCart(product, buttonState, cart)}
+              onClick={removeFromCart}
+              value={buttonState}
             >
               Remove From Cart
             </button>

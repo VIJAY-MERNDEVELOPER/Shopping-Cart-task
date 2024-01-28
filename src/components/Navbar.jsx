@@ -64,10 +64,8 @@ function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <div className="container text-center">
-            <span className="navbar-brand" href="/">
-              Extremes
-            </span>
+          <div className="container-sm text-center">
+            <h1 className="navbar-brand ">Extremes</h1>
           </div>
 
           <form className="d-flex mx-4">
