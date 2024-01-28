@@ -1,7 +1,11 @@
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { faRankingStar } from "@fortawesome/pro-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useState } from "react";
 
 function Products({ product, cart, setCart }) {
+  const totalStars = 5;
   const [buttonState, setButtonState] = useState(true);
   let addToCart = () => {
     setButtonState(false);
@@ -35,8 +39,34 @@ function Products({ product, cart, setCart }) {
         <h5 className="card-title text-center my-3 mt-4">
           {product.description}
         </h5>
-
-        <h6 className="text-center text-black my-3 mt-4">Rs.{product.price}</h6>
+        <div className="container text-center">
+          {product.starReview ? (
+            <span>
+              {[...new Array(totalStars)].map((arr, index) => {
+                return product.starReview > index ? (
+                  <FontAwesomeIcon icon={faStar} className="text-warning" />
+                ) : (
+                  <FontAwesomeIcon icon={faStar} />
+                );
+              })}
+            </span>
+          ) : (
+            <div>
+              {" "}
+              <br />{" "}
+            </div>
+          )}
+        </div>
+        {product.offerPrice ? (
+          <h6 className="text-center text-black my-3 mt-2">
+            <span className="strike"> Rs.{product.price}</span> Rs.
+            {product.offerPrice}
+          </h6>
+        ) : (
+          <h6 className="text-center text-black my-3 mt-2">
+            Rs.{product.price}
+          </h6>
+        )}
 
         <div className=" text-center mt-4 my-3">
           {buttonState ? (

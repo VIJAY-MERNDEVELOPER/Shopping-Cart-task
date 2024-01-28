@@ -9,6 +9,7 @@ function Navbar(props) {
       data-bs-theme="dark"
     >
       <div className="container-fluid ">
+        <h1 className="navbar-brand ">Extremes</h1>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,13 +29,13 @@ function Navbar(props) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link active" href="/">
                 About
               </a>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown ">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle active"
                 href="/"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -64,9 +65,6 @@ function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <div className="container-sm text-center">
-            <h1 className="navbar-brand ">Extremes</h1>
-          </div>
 
           <form className="d-flex mx-4">
             <button className="btn  border-white  text-white gap-1">
