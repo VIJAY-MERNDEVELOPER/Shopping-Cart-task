@@ -5,5 +5,5 @@
 <img src="public/shopping-cart image.png" width="700px" height="450px" alt="Selva">
 <br>
   <br>
-👆<a href="https://surveyform-task.netlify.app/">Survey-Form</a>
+👆<a href="https://surveyform-task.netlify.app/">Extremes-shopping-cart</a>
 </p>
